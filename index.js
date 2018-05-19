@@ -20,6 +20,8 @@ app.use(bodyParser.json())
 app.use('/api', require('./app/routes'))
 
 // app.use(Raven.errorHandler())
-app.listen(3000)
+const portNumber = app.listen(process.env.PORT || 3000);
+
+app.listen(portNumber)
 
 module.exports = app
